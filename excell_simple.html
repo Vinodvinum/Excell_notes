@@ -3,492 +3,621 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Excel Notes Simple Style</title>
+  <title>Excel Notes - Data Analyst Mastery</title>
   <style>
+    :root {
+      --bg: #f7f6f1;
+      --bg-alt: #f0eae2;
+      --surface: #ffffff;
+      --surface-2: #f8f6f2;
+      --text: #1f2d24;
+      --muted: #54665b;
+      --line: #d6ddd8;
+      --accent: #0f7a66;
+      --accent-2: #cc6a38;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #2c3e50;
-      background: #f8f9fa;
-      line-height: 1.6;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .hero .subtitle {
-      font-size: 1.1rem;
-      opacity: 0.95;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
     }
 
     main {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+    }
+
+    .hero {
+      border-top: 8px solid var(--accent);
+      background: linear-gradient(180deg, var(--surface-2) 0%, var(--bg) 100%);
+      padding: 80px 20px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .hero::before {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+      content: "Excel Learning";
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .hero .lede {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero a {
+      padding: 12px 28px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .hero .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .hero .primary:hover {
+      background: var(--accent-2);
+    }
+
+    .hero .secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .hero .secondary:hover {
+      background: var(--surface-2);
+    }
+
+    .hero .quick-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .hero .quick-links a {
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+
+    .hero .quick-links a:hover {
+      text-decoration: underline;
     }
 
     .section {
-      margin-bottom: 50px;
+      margin-bottom: 80px;
     }
 
     .section h2 {
-      font-size: 1.8rem;
-      color: #2c3e50;
-      margin-bottom: 30px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #f39c12;
-    }
-
-    .section.alt h2 {
-      border-bottom-color: #e67e22;
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: 48px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .card {
-      background: white;
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 25px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #f39c12;
-    }
-
-    .card.alt {
-      border-left-color: #e67e22;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
-
-    .card h4 {
-      font-size: 1rem;
-      margin-top: 15px;
-      margin-bottom: 8px;
-      color: #f39c12;
-    }
-
-    .card.span-6 {
+      padding: 32px;
       grid-column: span 6;
-    }
-
-    .card.span-4 {
-      grid-column: span 4;
     }
 
     .card.span-12 {
       grid-column: span 12;
     }
 
+    .card.span-4 {
+      grid-column: span 4;
+    }
+
     .chapter {
-      background: white;
-      border-left: 4px solid #f39c12;
+      border-left: 4px solid var(--accent);
     }
 
-    .chapter.alt {
-      border-left-color: #e67e22;
+    .chapter h3 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      color: var(--text);
     }
 
-    pre {
-      background: #f4f4f4;
-      border-left: 3px solid #f39c12;
-      padding: 15px;
+    .chip {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .step, .story, .answer, .practice {
+      margin: 16px 0;
+      padding: 16px;
       border-radius: 4px;
-      overflow-x: auto;
-      margin: 10px 0;
-      font-size: 0.95rem;
-      font-family: "Monaco", "Courier New", monospace;
-    }
-
-    code {
-      color: #2c3e50;
-    }
-
-    .answer, .practice, .step, .story {
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 4px;
-      font-size: 0.95rem;
-    }
-
-    .answer {
-      background: #e8f5e9;
-      border-left: 3px solid #4caf50;
-      color: #2e7d32;
-    }
-
-    .practice {
-      background: #fff3e0;
-      border-left: 3px solid #ff9800;
-      color: #e65100;
+      border-left: 4px solid;
     }
 
     .step {
-      background: #e3f2fd;
-      border-left: 3px solid #2196f3;
-      color: #1565c0;
+      border-left-color: var(--accent);
+      background: rgba(15, 122, 102, 0.08);
     }
 
     .story {
-      background: #f3e5f5;
-      border-left: 3px solid #9c27b0;
-      color: #6a1b9a;
+      border-left-color: var(--accent-2);
+      background: rgba(204, 106, 56, 0.08);
+    }
+
+    .answer {
+      border-left-color: var(--accent);
+      background: rgba(15, 122, 102, 0.08);
+    }
+
+    .practice {
+      border-left-color: #c59d2c;
+      background: rgba(197, 157, 44, 0.1);
     }
 
     .data-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 15px 0;
-      font-size: 0.9rem;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+
+    .data-table thead {
+      background: var(--accent);
+      color: white;
     }
 
     .data-table th {
-      background: #f39c12;
-      color: white;
       padding: 12px;
       text-align: left;
+      font-weight: 600;
     }
 
     .data-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #e0e0e0;
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .data-table tr:hover {
-      background: #f5f5f5;
+    .data-table tbody tr:hover {
+      background: var(--surface-2);
     }
 
-    @media (max-width: 768px) {
-      .card.span-6,
+    pre {
+      background: #16211b;
+      color: #eef7f1;
+      padding: 16px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 16px 0;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 1024px) {
+      .card {
+        grid-column: span 12;
+      }
+
       .card.span-4 {
         grid-column: span 12;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero .actions {
+        flex-direction: column;
+      }
+
+      .hero a {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 40px 16px;
+        margin-bottom: 40px;
       }
 
       .hero h1 {
         font-size: 1.8rem;
       }
 
+      .hero .lede {
+        font-size: 1rem;
+      }
+
+      .grid {
+        gap: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
       .section h2 {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
+        margin-bottom: 24px;
+      }
+
+      main {
+        padding: 0 16px;
+      }
+
+      .data-table {
+        font-size: 0.85rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 8px;
+      }
+
+      pre {
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
   <header class="hero">
-    <h1>Excel Notes</h1>
-    <p class="subtitle">Complete guide to Excel for Data Analysts — Simple, Practical, Interview-Ready</p>
+    <h1>Master Excel: From Zero to Dashboard Expert</h1>
+    <p class="lede">Complete 18-chapter Excel curriculum for data analysts. Learn from spreadsheets to professional dashboards.</p>
+    <div class="actions">
+      <a href="#phase1" class="primary">Start Learning</a>
+      <a href="#roadmap" class="secondary">View Roadmap</a>
+    </div>
+    <div class="quick-links">
+      <a href="#phase1">Phase 1 (Basics)</a>
+      <a href="#phase2">Phase 2 (Data)</a>
+      <a href="#phase3">Phase 3 (Functions)</a>
+      <a href="#phase4">Phase 4 (Analysis)</a>
+      <a href="#phase5">Phase 5 (Advanced)</a>
+      <a href="#phase6">Phase 6 (Mastery)</a>
+    </div>
   </header>
 
   <main>
+    <!-- ROADMAP -->
+    <section class="section" id="roadmap">
+      <h2>18-Chapter Curriculum</h2>
+      <div class="grid">
+        <div class="card span-12">
+          <h3 style="margin-top: 0;">All Chapters Organized by Phase</h3>
+          <ul style="columns: 3; column-gap: 32px;">
+            <li>Chapter 1: What is Excel & Why It's Used</li>
+            <li>Chapter 2: Excel Interface (VERY IMPORTANT)</li>
+            <li>Chapter 3: Data Entry & Formatting</li>
+            <li>Chapter 4: Sorting & Filtering</li>
+            <li>Chapter 5: Data Cleaning (VERY IMPORTANT)</li>
+            <li>Chapter 6: Basic Formulas (Core)</li>
+            <li>Chapter 7: Logical Functions</li>
+            <li>Chapter 8: Lookup Functions (VERY IMPORTANT)</li>
+            <li>Chapter 9: Text Functions</li>
+            <li>Chapter 10: Pivot Tables (MOST IMPORTANT)</li>
+            <li>Chapter 11: Charts in Excel</li>
+            <li>Chapter 12: Conditional Formatting</li>
+            <li>Chapter 13: Data Validation</li>
+            <li>Chapter 14: What-If Analysis</li>
+            <li>Chapter 15: Excel Shortcuts (Speed)</li>
+            <li>Chapter 16: Build Full Excel Dashboard</li>
+            <li>Chapter 17: Storytelling with Data</li>
+            <li>Chapter 18: Interview Preparation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <!-- PHASE 1: FOUNDATION -->
     <section class="section" id="phase1">
-      <h2>Phase 1: Foundation — Basics</h2>
+      <h2>Phase 1: Foundation & Basics</h2>
 
       <div class="grid">
         <article class="card chapter span-12">
+          <span class="chip">Chapter 1</span>
           <h3>What is Excel & Why It's Used</h3>
           
-          <h4>🧠 What is Excel?</h4>
-          <p>Excel is a spreadsheet tool used for data storage, cleaning, analysis and visualization.</p>
-          <p><strong>Excel = Fast + Flexible + Easy</strong></p>
+          <div class="step"><strong>Step 1: Excel Definition</strong> - Excel is a spreadsheet tool used for storing, organizing, cleaning, analyzing, and visualizing data.</div>
+          
+          <div class="story"><strong>Amazon Analyst Story:</strong> You work as a data analyst at Amazon. Your manager sends 500 customer orders in a CSV file and asks: "Give me quick insights - total sales, top city, average order value." You could use Python, SQL, or Power BI, but Excel is fastest because: (1) No installation needed, (2) Can drag-select and calculate instantly, (3) Can see results immediately in the same interface.</div>
 
-          <h4>🏢 Real Story (Amazon Analyst)</h4>
-          <p>You work at Amazon. Manager says: "Quickly analyze this data"</p>
-          <pre><code>order_id   amount    city
-1          5000      Bangalore
-2          3000      Mysore</code></pre>
-          <p>You don't open Power BI. You don't write SQL. You open Excel because it's quick.</p>
+          <div class="step"><strong>Step 2: Excel = Fast + Flexible + Easy</strong>
+            <ul>
+              <li><strong>Fast:</strong> No compilation, no querying, instant results</li>
+              <li><strong>Flexible:</strong> Can modify, fix, and recalculate on the fly</li>
+              <li><strong>Easy:</strong> Visual, no coding required, familiar to most people</li>
+            </ul>
+          </div>
 
-          <h4>✅ Why Excel is Used</h4>
-          <ul>
-            <li><strong>Quick Analysis:</strong> No setup required</li>
-            <li><strong>Data Cleaning:</strong> Remove duplicates, fix data</li>
-            <li><strong>Calculations:</strong> SUM, AVERAGE formulas</li>
-            <li><strong>Dashboards:</strong> Charts and reports</li>
-          </ul>
+          <div class="step"><strong>Step 3: Excel vs SQL vs Power BI</strong>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Tool</th>
+                  <th>When to Use</th>
+                  <th>Data Size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Excel</td>
+                  <td>Quick analysis, data cleaning, manual work</td>
+                  <td>Up to 1M rows</td>
+                </tr>
+                <tr>
+                  <td>SQL</td>
+                  <td>Complex queries, large databases, automation</td>
+                  <td>Billions of rows</td>
+                </tr>
+                <tr>
+                  <td>Power BI</td>
+                  <td>Visual dashboards, team sharing, live data</td>
+                  <td>Millions of rows</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <h4>📊 Excel vs SQL vs Power BI</h4>
-          <table class="data-table">
-            <tr>
-              <th>Tool</th>
-              <th>Use Case</th>
-            </tr>
-            <tr>
-              <td>Excel</td>
-              <td>Quick work, small/medium data</td>
-            </tr>
-            <tr>
-              <td>SQL</td>
-              <td>Large databases, complex queries</td>
-            </tr>
-            <tr>
-              <td>Power BI</td>
-              <td>Visual dashboards, presentations</td>
-            </tr>
-          </table>
+          <div class="answer"><strong>Interview Q: What is Excel and why is it important?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Excel is a spreadsheet application used for data organization, analysis, and visualization. It's important because it's fast for small-medium datasets, requires no special setup, and every organization uses it. Most analysts spend 30-40% of their time in Excel.</div>
 
-          <h4>⚡ When to Use Excel</h4>
-          <ul>
-            <li>Data is small to medium</li>
-            <li>Need quick insights</li>
-            <li>Need manual data work</li>
-            <li>Working alone (not team dashboard)</li>
-          </ul>
-
-          <div class="answer"><strong>Answer:</strong> Excel is used for quick analysis of small datasets, data cleaning, and fast insights without setup.</div>
-
-          <h4>🎤 Interview Answer</h4>
-          <p>"What is Excel?"</p>
-          <div class="answer">Excel is a spreadsheet tool used for data storage, cleaning, analysis and visualization. It is commonly used for quick data analysis and reporting, especially with small to medium datasets.</div>
-
-          <h4>🧪 Practice Questions</h4>
-          <div class="practice"><strong>Q1:</strong> Why use Excel instead of Power BI?</div>
-          <div class="answer"><strong>Ans:</strong> Excel is faster for quick analysis. Power BI is better for large datasets and team dashboards.</div>
-          <div class="practice"><strong>Q2:</strong> What can Excel do?</div>
-          <div class="answer"><strong>Ans:</strong> Store data, clean it, calculate metrics, create charts and dashboards.</div>
+          <div class="practice"><strong>Practice Q1:</strong> Why use Excel instead of Power BI for quick analysis?</div>
+          <div class="answer"><strong>Answer:</strong> Excel is faster for immediate insights - no dashboard building needed. Power BI is better when you need to share dashboards with non-technical teams or work with large datasets repeatedly.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 2</span>
           <h3>Excel Interface (VERY IMPORTANT)</h3>
           
-          <h4>🖥️ Excel Layout</h4>
+          <div class="step"><strong>Step 1: Rows & Columns</strong>
+            <ul>
+              <li><strong>Rows:</strong> Horizontal numbers on the left (1, 2, 3...)</li>
+              <li><strong>Columns:</strong> Vertical letters on the top (A, B, C...)</li>
+              <li><strong>Cell:</strong> Intersection of row and column (e.g., A1, B5, C100)</li>
+            </ul>
+          </div>
 
-          <h4>🔢 Rows</h4>
-          <p>Horizontal numbers: 1, 2, 3... down the left side</p>
+          <div class="step"><strong>Step 2: Workbook vs Worksheet</strong>
+            <ul>
+              <li><strong>Workbook:</strong> Entire Excel file (.xlsx)</li>
+              <li><strong>Worksheet:</strong> One sheet/tab inside a workbook (you can have multiple sheets)</li>
+              <li><strong>Example:</strong> File called "Sales.xlsx" = workbook. Inside it: "Jan_Sales" and "Feb_Sales" = two worksheets</li>
+            </ul>
+          </div>
 
-          <h4>🔤 Columns</h4>
-          <p>Vertical letters: A, B, C... across the top</p>
+          <div class="step"><strong>Step 3: Key Components</strong>
+            <ul>
+              <li><strong>Formula Bar:</strong> Top box where you write formulas</li>
+              <li><strong>Name Box:</strong> Shows current cell (A1)</li>
+              <li><strong>Ribbon:</strong> Top menu with tabs (File, Home, Insert, Data, Review, View)</li>
+              <li><strong>Status Bar:</strong> Bottom bar showing sum/average/count of selected cells</li>
+            </ul>
+          </div>
 
-          <h4>📦 Cell</h4>
-          <p>Intersection of row & column. Example: A1, B2, C3</p>
-
-          <h4>📄 Worksheet</h4>
-          <p>One page in Excel file</p>
-
-          <h4>📚 Workbook</h4>
-          <p>Entire Excel file (can have multiple sheets)</p>
-
-          <h4>🧰 Key Components</h4>
-          <ul>
-            <li><strong>Formula Bar:</strong> Shows content of cell, write formulas here</li>
-            <li><strong>Ribbon:</strong> Top menu (Home, Insert, Data, View tabs)</li>
-            <li><strong>Name Box:</strong> Shows current cell (A1)</li>
-          </ul>
-
-          <h4>📊 Example</h4>
-          <table class="data-table">
-            <tr>
-              <th>Name (A)</th>
-              <th>Amount (B)</th>
-            </tr>
-            <tr>
-              <td>Vinod</td>
-              <td>5000</td>
-            </tr>
-          </table>
-          <p>Cell B2 = 5000</p>
-
-          <div class="answer"><strong>Answer:</strong> Excel structure: rows + columns = cells. Workbook contains worksheets. Use formula bar for calculations.</div>
-
-          <h4>🧪 Practice</h4>
-          <div class="practice"><strong>Q1:</strong> What is a cell?</div>
-          <div class="answer"><strong>Ans:</strong> Intersection of row and column (e.g., A1)</div>
-          <div class="practice"><strong>Q2:</strong> Where do you write formulas?</div>
-          <div class="answer"><strong>Ans:</strong> Formula bar at the top</div>
+          <div class="answer"><strong>Interview Q: Explain Excel's basic structure.</strong></div>
+          <div class="answer"><strong>Answer:</strong> Excel file (workbook) contains sheets (worksheets). Each sheet has rows (1,2,3...) and columns (A,B,C...). Their intersection is a cell (A1, B2). You write data in cells or formulas in the formula bar.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 3</span>
           <h3>Data Entry & Formatting</h3>
           
-          <h4>📝 Data Types</h4>
+          <div class="step"><strong>Step 1: Data Types</strong>
+            <ul>
+              <li><strong>Numbers:</strong> 5000, 100, 3.14</li>
+              <li><strong>Text:</strong> Bangalore, Product A, Customer Name</li>
+              <li><strong>Dates:</strong> 01-01-2024, 1/1/24, 2024-01-01</li>
+              <li><strong>Formulas:</strong> =SUM(A1:A10)</li>
+            </ul>
+          </div>
 
-          <h4>1. Numbers</h4>
-          <pre><code>5000, 100, 3.14</code></pre>
+          <div class="step"><strong>Step 2: Formatting (CRITICAL SKILL)</strong>
+            <ul>
+              <li><strong>Currency:</strong> 5000 → ₹5,000 (for money)</li>
+              <li><strong>Date:</strong> Standardize to DD-MM-YYYY</li>
+              <li><strong>Numbers:</strong> Add decimals: 3 → 3.00</li>
+              <li><strong>Text:</strong> Bold, color, alignment</li>
+            </ul>
+          </div>
 
-          <h4>2. Text</h4>
-          <pre><code>Vinod, Bangalore, Product A</code></pre>
+          <div class="story"><strong>Data Cleaning Story:</strong> You receive data with mixed formats: amounts are sometimes ₹5000, sometimes 5,000, sometimes just 5000. Dates are 01/01/2024, 1-1-24, 2024-01-01. Excel shows sum incorrectly because it doesn't recognize the formats. Solution: Format the entire column to currency/date. Result: Calculations now work correctly.</div>
 
-          <h4>3. Dates</h4>
-          <pre><code>01-01-2024, 1/1/24, 2024-01-01</code></pre>
-
-          <h4>🎨 Formatting (VERY IMPORTANT)</h4>
-
-          <h4>Currency Format</h4>
-          <pre><code>5000 → ₹5,000</code></pre>
-
-          <h4>Date Format</h4>
-          <pre><code>Fix inconsistent dates to: DD-MM-YYYY</code></pre>
-
-          <h4>Number Format</h4>
-          <pre><code>Add decimals: 3 → 3.00</code></pre>
-
-          <h4>Cell Styling</h4>
-          <pre><code>Make bold: Ctrl+B
-Add color: Font color dropdown
-Align: Center, Left, Right</code></pre>
-
-          <h4>Why Format?</h4>
-          <ul>
-            <li>Clarity</li>
-            <li>Consistency</li>
-            <li>Professional look</li>
-            <li>Correct analysis</li>
-          </ul>
-
-          <div class="answer"><strong>Answer:</strong> Formatting: use currency for money, date format for dates, styling for readability.</div>
+          <div class="answer"><strong>Interview Q: Why is data formatting important?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Formatting ensures consistent data recognition. It prevents calculation errors, makes reports professional, and helps Excel understand the data type correctly (numbers vs text).</div>
         </article>
       </div>
     </section>
 
     <!-- PHASE 2: DATA HANDLING -->
-    <section class="section alt" id="phase2">
+    <section class="section" id="phase2">
       <h2>Phase 2: Data Handling — Core Skills</h2>
 
       <div class="grid">
         <article class="card chapter span-6">
+          <span class="chip">Chapter 4</span>
           <h3>Sorting & Filtering</h3>
           
-          <h4>📊 Sort Data</h4>
+          <div class="step"><strong>Step 1: Sort Ascending (A → Z)</strong>
+            <pre><code>Select column → Data tab → Sort A to Z
+Result: Bangalore → Mumbai → Mysore</code></pre>
+          </div>
 
-          <h4>Sort Ascending (A → Z)</h4>
-          <pre><code>Select column → Data tab
-Sort A to Z
-Result: Bangalore, Mumbai, Mysore</code></pre>
+          <div class="step"><strong>Step 2: Sort Descending (Z → A)</strong>
+            <pre><code>Select column → Data tab → Sort Z to A
+Result: Mysore → Mumbai → Bangalore</code></pre>
+          </div>
 
-          <h4>Sort Descending (Z → A)</h4>
-          <pre><code>Select column → Data tab
-Sort Z to A
-Result: Mysore, Mumbai, Bangalore</code></pre>
+          <div class="story"><strong>Real Scenario:</strong> Your boss says "Show me the top 10 customers by sales." Your data is jumbled. You select the Amount column, click Data → Sort Z→A. Instantly, highest sales are at top. You can now see top customers immediately without any formulas.</div>
 
-          <h4>Sort by Value</h4>
-          <pre><code>Select → Data → Sort
-Choose column (salary)
-Order: Descending (highest first)</code></pre>
-
-          <h4>🔍 Filter Data</h4>
-
-          <h4>Auto Filter</h4>
-          <pre><code>Select data → Data tab
-AutoFilter
-Click dropdown arrows to filter</code></pre>
-
-          <h4>Example</h4>
-          <pre><code>Column: City
-Filter: Show only Bangalore
-Result: Only Bangalore rows visible</code></pre>
-
-          <div class="answer"><strong>Answer:</strong> Sort for ordering, filter for showing subsets. Both keep data intact (non-destructive).</div>
+          <div class="answer"><strong>Interview Q: What's the difference between Sort and Filter?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Sort rearranges all rows. Filter shows only selected rows but keeps others hidden. Both preserve original data.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 5</span>
           <h3>Data Cleaning (VERY IMPORTANT)</h3>
           
-          <h4>🧹 Remove Duplicates</h4>
+          <div class="step"><strong>Step 1: Remove Duplicates</strong>
+            <pre><code>Select all → Data → Remove Duplicates
+Excel removes exact row duplicates instantly</code></pre>
+          </div>
 
-          <h4>Step 1: Select all data</h4>
-          <pre><code>Ctrl+A</code></pre>
+          <div class="step"><strong>Step 2: Handle Blanks & Trim Spaces</strong>
+            <pre><code>=TRIM(A1)  → Removes extra spaces
+=CLEAN(A1) → Removes non-printing characters
+=UPPER(A1) → Capitalizes text</code></pre>
+          </div>
 
-          <h4>Step 2: Remove Duplicates</h4>
-          <pre><code>Data tab → Remove Duplicates
-Choose columns
-Click OK</code></pre>
+          <div class="story"><strong>Data Cleaning Story:</strong> You receive customer data: "  Vinod  " (extra spaces), "vinod" (lowercase), "VINOD" (uppercase). Excel sum is wrong because it treats these as different values. After using TRIM + UPPER, all become "VINOD". Now SUM works correctly.</div>
 
-          <h4>Handle Blanks</h4>
-          <pre><code>Find & Replace: Ctrl+H
-Find: (leave blank)
-Replace: Delete or fill value</code></pre>
-
-          <h4>Text Cleanup</h4>
-          <pre><code>=TRIM(text)  → Remove extra spaces
-=CLEAN(text) → Remove non-printing chars
-=UPPER(text) → Capitalize</code></pre>
-
-          <h4>Example</h4>
-          <pre><code>Before: "  Vinod  "
-After: "Vinod"  (using TRIM)</code></pre>
-
-          <div class="answer"><strong>Answer:</strong> Clean data: remove duplicates, fill blanks, trim spaces. Use functions for text cleanup.</div>
+          <div class="answer"><strong>Interview Q: Why is data cleaning critical?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Dirty data causes wrong calculations. Duplicates inflate metrics. Extra spaces break formulas. Inconsistent formats confuse Excel. Clean data = reliable insights.</div>
         </article>
 
         <article class="card chapter span-12">
+          <span class="chip">Chapter 6</span>
           <h3>Basic Formulas (Core)</h3>
           
-          <h4>🧮 Basic Functions</h4>
+          <div class="step"><strong>Essential Functions</strong>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Function</th>
+                  <th>Purpose</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>=SUM()</td>
+                  <td>Add all values</td>
+                  <td>=SUM(B2:B100) → Total</td>
+                </tr>
+                <tr>
+                  <td>=AVERAGE()</td>
+                  <td>Mean value</td>
+                  <td>=AVERAGE(B2:B100) → Avg</td>
+                </tr>
+                <tr>
+                  <td>=COUNT()</td>
+                  <td>Count numbers</td>
+                  <td>=COUNT(B2:B100) → 99</td>
+                </tr>
+                <tr>
+                  <td>=COUNTA()</td>
+                  <td>Count non-empty</td>
+                  <td>=COUNTA(A2:A100)</td>
+                </tr>
+                <tr>
+                  <td>=MIN()</td>
+                  <td>Smallest value</td>
+                  <td>=MIN(B2:B100) → 100</td>
+                </tr>
+                <tr>
+                  <td>=MAX()</td>
+                  <td>Largest value</td>
+                  <td>=MAX(B2:B100) → 50000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <h4>SUM - Add all values</h4>
-          <pre><code>=SUM(B2:B10)
-Result: 50000</code></pre>
+          <div class="story"><strong>Formula Story:</strong> Sales data: 1000 rows, 100 cities. You need total, average, count, min, max. Without formulas: impossible. With =SUM/AVERAGE/COUNT/MIN/MAX in one row: done in 5 seconds. This is why formulas are essential.</div>
 
-          <h4>AVERAGE - Mean value</h4>
-          <pre><code>=AVERAGE(B2:B10)
-Result: 5000</code></pre>
-
-          <h4>COUNT - Count numbers</h4>
-          <pre><code>=COUNT(B2:B10)
-Result: 10</code></pre>
-
-          <h4>COUNTA - Count non-empty cells</h4>
-          <pre><code>=COUNTA(A2:A10)</code></pre>
-
-          <h4>MIN - Smallest value</h4>
-          <pre><code>=MIN(B2:B10)
-Result: 1000</code></pre>
-
-          <h4>MAX - Largest value</h4>
-          <pre><code>=MAX(B2:B10)
-Result: 10000</code></pre>
-
-          <h4>📊 Example Dashboard</h4>
-          <table class="data-table">
-            <tr>
-              <th>Metric</th>
-              <th>Formula</th>
-              <th>Result</th>
-            </tr>
-            <tr>
-              <td>Total Sales</td>
-              <td>=SUM(B2:B100)</td>
-              <td>₹500,000</td>
-            </tr>
-            <tr>
-              <td>Avg Order</td>
-              <td>=AVERAGE(B2:B100)</td>
-              <td>₹5,000</td>
-            </tr>
-            <tr>
-              <td>Order Count</td>
-              <td>=COUNT(B2:B100)</td>
-              <td>100</td>
-            </tr>
-          </table>
-
-          <div class="answer"><strong>Answer:</strong> Basic formulas: SUM for totals, AVERAGE for mean, COUNT for count, MIN/MAX for extremes.</div>
-
-          <h4>🧪 Practice</h4>
-          <div class="practice"><strong>Q1:</strong> How to sum B2 to B10?</div>
-          <div class="answer"><strong>Ans:</strong> =SUM(B2:B10)</div>
+          <div class="answer"><strong>Interview Q: What's the most-used Excel formula?</strong></div>
+          <div class="answer"><strong>Answer:</strong> SUM for totals. AVERAGE for mean. In dashboards, 70% of calculations use these three functions.</div>
         </article>
       </div>
     </section>
@@ -499,222 +628,192 @@ Result: 10000</code></pre>
 
       <div class="grid">
         <article class="card chapter span-6">
+          <span class="chip">Chapter 7</span>
           <h3>Logical Functions</h3>
           
-          <h4>🔀 IF Statement</h4>
+          <div class="step"><strong>IF Function: Conditional Logic</strong>
+            <pre><code>=IF(condition, if_true_value, if_false_value)
 
-          <h4>Syntax</h4>
-          <pre><code>=IF(condition, if_true, if_false)</code></pre>
-
-          <h4>Example</h4>
-          <pre><code>=IF(B2>5000, "High", "Low")
+Example:
+=IF(B2>5000, "High", "Low")
 If amount > 5000: "High", else "Low"</code></pre>
+          </div>
 
-          <h4>AND Function</h4>
-          <pre><code>=IF(AND(B2>5000, C2="Bangalore"), "Yes", "No")
-Both conditions must be true</code></pre>
+          <div class="step"><strong>AND / OR / NOT Functions</strong>
+            <pre><code>=IF(AND(B2>5000, C2="Bangalore"), "Yes", "No")
+Both conditions TRUE → "Yes"
 
-          <h4>OR Function</h4>
-          <pre><code>=IF(OR(B2>5000, C2="Mumbai"), "Yes", "No")
-Any condition can be true</code></pre>
+=IF(OR(B2>5000, C2="Delhi"), "Yes", "No")
+Any condition TRUE → "Yes"
 
-          <h4>NOT Function</h4>
-          <pre><code>=IF(NOT(C2="Delhi"), "Yes", "No")
-NOT equals</code></pre>
+=IF(NOT(C2="Mumbai"), "Yes", "No")
+Opposite of condition → "Yes"</code></pre>
+          </div>
 
-          <div class="answer"><strong>Answer:</strong> IF for conditions, AND for all true, OR for any true, NOT for negation.</div>
+          <div class="answer"><strong>Interview Q: Give an example of IF with AND.</strong></div>
+          <div class="answer"><strong>Answer:</strong> =IF(AND(age>18, income>50000), "Approved", "Denied") checks both conditions before approving.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 8</span>
           <h3>Lookup Functions (VERY IMPORTANT)</h3>
           
-          <h4>🔍 XLOOKUP (Modern)</h4>
+          <div class="step"><strong>XLOOKUP (Modern & Best)</strong>
+            <pre><code>=XLOOKUP(lookup_value, lookup_array, return_array)
 
-          <h4>Syntax</h4>
-          <pre><code>=XLOOKUP(lookup_value, lookup_array, return_array)</code></pre>
+Example: Find product name by ID
+=XLOOKUP(1, product_ids, product_names)
+Result: "Laptop"</code></pre>
+          </div>
 
-          <h4>Example</h4>
-          <pre><code>Product data in another sheet:
-product_id | product_name
-1          | Laptop
-2          | Mouse
+          <div class="step"><strong>VLOOKUP (Classic)</strong>
+            <pre><code>=VLOOKUP(lookup_value, table, column_index, FALSE)
 
-Formula: =XLOOKUP(1, product_id, product_name)
-Result: Laptop</code></pre>
-
-          <h4>VLOOKUP (Classic)</h4>
-          <pre><code>=VLOOKUP(lookup_value, table_array, col_index, FALSE)</code></pre>
-
-          <h4>Example</h4>
-          <pre><code>=VLOOKUP(1, products_table, 2, FALSE)
+Example:
+=VLOOKUP(1, products_table, 2, FALSE)
 Look for 1 in first column, return column 2</code></pre>
+          </div>
 
-          <h4>HLOOKUP (Horizontal)</h4>
-          <pre><code>=HLOOKUP(value, table, row_index, FALSE)
-Same as VLOOKUP but searches horizontally</code></pre>
+          <div class="story"><strong>Lookup Story:</strong> You have 10,000 customer IDs but only columns: ID, Name, City. Boss asks "Get phone numbers for these 50 customers." You have a separate phone database. Using XLOOKUP, you match IDs and pull phone numbers instantly. Without XLOOKUP: manual, error-prone, impossible at scale.</div>
 
-          <div class="answer"><strong>Answer:</strong> XLOOKUP best (modern), VLOOKUP for vertical lookup, HLOOKUP for horizontal.</div>
-
-          <h4>🧪 Practice</h4>
-          <div class="practice"><strong>Q1:</strong> How to lookup product name by ID?</div>
-          <div class="answer"><strong>Ans:</strong> =XLOOKUP(ID, product_IDs, product_names)</div>
+          <div class="answer"><strong>Interview Q: XLOOKUP vs VLOOKUP?</strong></div>
+          <div class="answer"><strong>Answer:</strong> XLOOKUP is newer, flexible (searches left/right). VLOOKUP is older, searches only right. Use XLOOKUP if available.</div>
         </article>
 
         <article class="card chapter span-12">
+          <span class="chip">Chapter 9</span>
           <h3>Text Functions</h3>
           
-          <h4>📝 Text Manipulation</h4>
+          <div class="step"><strong>Text Manipulation Functions</strong>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Function</th>
+                  <th>What It Does</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>=LEFT()</td>
+                  <td>First N characters</td>
+                  <td>=LEFT("Bangalore", 3) → "Ban"</td>
+                </tr>
+                <tr>
+                  <td>=RIGHT()</td>
+                  <td>Last N characters</td>
+                  <td>=RIGHT("Bangalore", 4) → "lore"</td>
+                </tr>
+                <tr>
+                  <td>=MID()</td>
+                  <td>Middle characters</td>
+                  <td>=MID("Bangalore", 2, 4) → "anga"</td>
+                </tr>
+                <tr>
+                  <td>=CONCAT()</td>
+                  <td>Join text</td>
+                  <td>=CONCAT("Hi", " ", "Vinod") → "Hi Vinod"</td>
+                </tr>
+                <tr>
+                  <td>=LEN()</td>
+                  <td>Count characters</td>
+                  <td>=LEN("Bangalore") → 9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <h4>LEFT - First N characters</h4>
-          <pre><code>=LEFT("Bangalore", 3)
-Result: "Ban"</code></pre>
+          <div class="story"><strong>Text Processing Story:</strong> Customer names are: "LastName, FirstName" format ("Sharma, Vinod"). You need first names only for emails. =MID() extracts after comma. Instant processing for 1000s of names without manual work.</div>
 
-          <h4>RIGHT - Last N characters</h4>
-          <pre><code>=RIGHT("Bangalore", 4)
-Result: "lore"</code></pre>
-
-          <h4>MID - Middle characters</h4>
-          <pre><code>=MID("Bangalore", 2, 4)
-Result: "anga"</code></pre>
-
-          <h4>CONCAT - Combine text</h4>
-          <pre><code>=CONCAT("Hello", " ", "World")
-Result: "Hello World"</code></pre>
-
-          <h4>CONCATENATE - Old version</h4>
-          <pre><code>=CONCATENATE(A1, " ", B1)</code></pre>
-
-          <h4>Example: Full Name</h4>
-          <pre><code>First Name: John
-Last Name: Doe
-=CONCAT(A2, " ", B2)
-Result: "John Doe"</code></pre>
-
-          <div class="answer"><strong>Answer:</strong> LEFT/RIGHT/MID extract text, CONCAT joins strings.</div>
+          <div class="answer"><strong>Interview Q: How to extract domain from email?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Use RIGHT and FIND. =RIGHT(email, LEN(email) - FIND("@", email)) extracts after @.</div>
         </article>
       </div>
     </section>
 
     <!-- PHASE 4: ANALYSIS TOOLS -->
-    <section class="section alt" id="phase4">
+    <section class="section" id="phase4">
       <h2>Phase 4: Analysis Tools</h2>
 
       <div class="grid">
         <article class="card chapter span-12">
+          <span class="chip">Chapter 10</span>
           <h3>Pivot Tables (MOST IMPORTANT)</h3>
           
-          <h4>🔄 What is Pivot Table?</h4>
-          <p>Tool to summarize data without formulas. Drag, drop, and aggregate.</p>
+          <div class="step"><strong>What is Pivot Table?</strong> - A tool that instantly summarizes data by dragging fields. No formulas needed.</div>
 
-          <h4>When to Use</h4>
-          <ul>
-            <li>Quick grouping (by month, city, category)</li>
-            <li>No formula knowledge needed</li>
-            <li>Fast aggregations (SUM, COUNT, AVG)</li>
-          </ul>
+          <div class="step"><strong>When to Use:</strong>
+            <ul>
+              <li>Need quick grouping by city, month, product category</li>
+              <li>Want aggregation without writing formulas</li>
+              <li>Analyzing large datasets (100K+ rows)</li>
+            </ul>
+          </div>
 
-          <h4>📊 Step-by-Step</h4>
-          <ol>
-            <li><strong>Select Data:</strong> Click anywhere in table</li>
-            <li><strong>Insert → PivotTable:</strong> Click on menu</li>
-            <li><strong>Choose Location:</strong> New sheet or existing</li>
-            <li><strong>Drag Fields:</strong>
-              <ul>
-                <li>Row Labels: City, Product</li>
-                <li>Columns: Month, Year</li>
-                <li>Values: Amount, Count (auto-summed)</li>
-                <li>Filters: Optional filters</li>
-              </ul>
-            </li>
-            <li><strong>Analyze:</strong> Read summary</li>
-          </ol>
+          <div class="step"><strong>How to Create (5 Steps)</strong>
+            <ol>
+              <li>Click any cell in data table</li>
+              <li>Insert → PivotTable</li>
+              <li>Choose New sheet or existing location</li>
+              <li>Drag fields: Rows (city), Columns (month), Values (amount)</li>
+              <li>Read instant summary</li>
+            </ol>
+          </div>
 
-          <h4>Example: Sales by City</h4>
-          <pre><code>Original data: 1000 rows
-Pivot result:
-City       | Total Sales
-Bangalore  | ₹150,000
-Mumbai     | ₹200,000
-Delhi      | ₹100,000</code></pre>
+          <div class="story"><strong>Pivot Table Story:</strong> Raw data: 50,000 sales records. Without pivot: impossible to see pattern. Create pivot by city and month: instantly see which city earns how much each month. 10 seconds vs 2 hours of manual work.</div>
 
-          <h4>Pivot Tricks</h4>
-          <ul>
-            <li>Right-click value → Change aggregation (SUM, AVG, COUNT)</li>
-            <li>Add multiple fields to rows/columns</li>
-            <li>Refresh data: right-click → Refresh</li>
-          </ul>
-
-          <div class="answer"><strong>Answer:</strong> Pivot tables: drag fields, auto-aggregate. Fastest way to summarize data in Excel.</div>
-
-          <h4>🧪 Practice</h4>
-          <div class="practice"><strong>Q1:</strong> How to create pivot table?</div>
-          <div class="answer"><strong>Ans:</strong> Select data → Insert → PivotTable → drag fields</div>
+          <div class="answer"><strong>Interview Q: When would you use Pivot vs formula?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Pivot for quick exploration and ad-hoc analysis. Formula for fixed reports. Pivot is faster for discovery; formula is better for automation.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 11</span>
           <h3>Charts in Excel</h3>
           
-          <h4>📊 Common Chart Types</h4>
+          <div class="step"><strong>When to Use Each Chart Type:</strong>
+            <ul>
+              <li><strong>Bar Chart:</strong> Compare categories (cities, products)</li>
+              <li><strong>Line Chart:</strong> Show trends over time (monthly sales)</li>
+              <li><strong>Pie Chart:</strong> Show composition (% of total)</li>
+              <li><strong>Area Chart:</strong> Show magnitude and trend together</li>
+            </ul>
+          </div>
 
-          <h4>Bar Chart</h4>
-          <pre><code>Best for: Comparing categories
-Example: Sales by city
-Data: Category in X, Values in Y</code></pre>
+          <div class="step"><strong>Create Chart (3 Steps)</strong>
+            <ol>
+              <li>Select data (with headers)</li>
+              <li>Insert → Chart type</li>
+              <li>Customize title, legend, labels</li>
+            </ol>
+          </div>
 
-          <h4>Line Chart</h4>
-          <pre><code>Best for: Trends over time
-Example: Monthly sales trend
-Data: Month in X, Amount in Y</code></pre>
-
-          <h4>Pie Chart</h4>
-          <pre><code>Best for: Composition (% of whole)
-Example: Market share by product
-Data: Parts and total</code></pre>
-
-          <h4>How to Create</h4>
-          <ol>
-            <li>Select data (including headers)</li>
-            <li>Insert → Chart type</li>
-            <li>Customize: title, legend, labels</li>
-            <li>Place on sheet</li>
-          </ol>
-
-          <h4>Format Chart</h4>
-          <ul>
-            <li>Title: Double-click → Edit</li>
-            <li>Legend: Right-click → Options</li>
-            <li>Colors: Select element → Format</li>
-          </ul>
-
-          <div class="answer"><strong>Answer:</strong> Select data → Insert Chart → customize title and labels.</div>
+          <div class="answer"><strong>Interview Q: How to choose chart type?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Line = trends, Bar = comparisons, Pie = composition. Match chart type to story you want to tell.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 12</span>
           <h3>Conditional Formatting</h3>
           
-          <h4>🎨 Highlight Important Data</h4>
+          <div class="step"><strong>Highlight Important Data</strong>
+            <ul>
+              <li><strong>Color Scales:</strong> Green (good) → Yellow (neutral) → Red (bad)</li>
+              <li><strong>Highlight Rules:</strong> Highlight cells > 5000 in green, < 1000 in red</li>
+              <li><strong>Data Bars:</strong> Visual bars inside cells showing magnitude</li>
+            </ul>
+          </div>
 
-          <h4>Color Scales</h4>
-          <pre><code>Home → Conditional Formatting
-Color Scales → Green to Red
-Green = Good, Red = Bad</code></pre>
+          <div class="step"><strong>How to Apply:</strong>
+            <ol>
+              <li>Select data range</li>
+              <li>Home → Conditional Formatting</li>
+              <li>Choose rule type (Color Scale, Highlight Cells, Data Bar)</li>
+              <li>Excel applies colors automatically</li>
+            </ol>
+          </div>
 
-          <h4>Highlight Cell Rules</h4>
-          <pre><code>Greater Than: Highlight > 5000
-Less Than: Highlight < 1000
-Equal To: Highlight = 'Yes'</code></pre>
-
-          <h4>Data Bars</h4>
-          <pre><code>Show visual bars inside cells
-Quick comparison without chart</code></pre>
-
-          <h4>Example</h4>
-          <pre><code>Sales column:
-500 → Red (low)
-5000 → Yellow (medium)
-10000 → Green (high)</code></pre>
-
-          <div class="answer"><strong>Answer:</strong> Conditional formatting: color scales, highlight rules, data bars for visual insights.</div>
+          <div class="answer"><strong>Interview Q: Why use conditional formatting?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Makes patterns visible instantly. Managers see high/low values without reading numbers. Professional, saves time.</div>
         </article>
       </div>
     </section>
@@ -725,79 +824,204 @@ Quick comparison without chart</code></pre>
 
       <div class="grid">
         <article class="card chapter span-6">
+          <span class="chip">Chapter 13</span>
           <h3>Data Validation</h3>
           
-          <h4>📋 Control Data Entry</h4>
+          <div class="step"><strong>Control Data Entry with Dropdowns</strong>
+            <pre><code>Select cells → Data → Data Validation
+List → Enter options: Bangalore, Mumbai, Delhi
+Result: Dropdown menu prevents wrong entries</code></pre>
+          </div>
 
-          <h4>Dropdown List</h4>
-          <pre><code>Select cells → Data → Validity
-List → Choose: List
-Source: Bangalore, Mumbai, Delhi
-Result: Dropdown menu appears</code></pre>
-
-          <h4>Number Range</h4>
-          <pre><code>Select cells → Data → Validity
-Allow: Decimal
+          <div class="step"><strong>Number Range Validation</strong>
+            <pre><code>Allow: Decimal
 Between: 0 and 10000
-Error message if invalid</code></pre>
+Error: "Enter amount between 0-10000"</code></pre>
+          </div>
 
-          <h4>Date Range</h4>
-          <pre><code>Select cells → Data → Validity
-Allow: Date
-Between: 01-01-2024 and 31-12-2024</code></pre>
-
-          <div class="answer"><strong>Answer:</strong> Data validation: dropdowns prevent errors, enforce ranges, control data quality.</div>
+          <div class="answer"><strong>Interview Q: Why validate data?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Prevents errors at data entry. Enforces rules. Maintains data quality. Saves time on cleaning.</div>
         </article>
 
         <article class="card chapter span-6">
+          <span class="chip">Chapter 14</span>
           <h3>What-If Analysis</h3>
           
-          <h4>🔮 Scenario Analysis</h4>
-
-          <h4>Goal Seek</h4>
-          <p>Find input value for desired output</p>
-          <pre><code>Example:
-Formula: Total Profit = Revenue - Cost
-Goal: Want profit = ₹50,000
+          <div class="step"><strong>Goal Seek: Find Input for Target Output</strong>
+            <pre><code>Formula: Profit = Revenue - Cost
+Goal: Want Profit = ₹50,000
 Question: What revenue needed?
-Goal Seek finds answer</code></pre>
+Data → What-If → Goal Seek
+Excel calculates answer</code></pre>
+          </div>
 
-          <h4>Data Table</h4>
-          <p>Test multiple scenarios at once</p>
-          <pre><code>Create table with different inputs
-See all outputs
-Compare scenarios</code></pre>
+          <div class="step"><strong>Data Table: Test Multiple Scenarios</strong>
+            <pre><code>Set up scenarios (Best, Worst, Expected)
+See all outputs at once
+Compare side by side</code></pre>
+          </div>
 
-          <h4>Scenario Manager</h4>
-          <p>Save different scenarios (Best, Worst, Expected)</p>
-
-          <div class="answer"><strong>Answer:</strong> What-if: goal seek finds input for output, data tables show scenarios.</div>
+          <div class="answer"><strong>Interview Q: Real-world use of Goal Seek?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Sales target: ₹1M. Current: ₹800K. Question: "How many more units needed?" Goal Seek calculates instantly.</div>
         </article>
 
         <article class="card chapter span-12">
+          <span class="chip">Chapter 15</span>
           <h3>Excel Shortcuts (Speed)</h3>
           
-          <h4>⚡ Must-Know Shortcuts</h4>
+          <div class="step"><strong>Must-Know Shortcuts</strong>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Shortcut</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ctrl+A</td>
+                  <td>Select All</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+C</td>
+                  <td>Copy</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+V</td>
+                  <td>Paste</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+X</td>
+                  <td>Cut</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+Z</td>
+                  <td>Undo</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+Y</td>
+                  <td>Redo</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+H</td>
+                  <td>Find & Replace</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+B</td>
+                  <td>Bold</td>
+                </tr>
+                <tr>
+                  <td>F2</td>
+                  <td>Edit Cell</td>
+                </tr>
+                <tr>
+                  <td>Tab</td>
+                  <td>Move Right</td>
+                </tr>
+                <tr>
+                  <td>Shift+Tab</td>
+                  <td>Move Left</td>
+                </tr>
+                <tr>
+                  <td>Ctrl+→</td>
+                  <td>Jump to End of Data</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <table class="data-table">
-            <tr>
-              <th>Shortcut</th>
-              <th>Action</th>
-            </tr>
-            <tr>
-              <td>Ctrl+A</td>
-              <td>Select All</td>
-            </tr>
-            <tr>
-              <td>Ctrl+C</td>
-              <td>Copy</td>
-            </tr>
-            <tr>
-              <td>Ctrl+V</td>
-              <td>Paste</td>
-            </tr>
-            <tr>
-              <td>Ctrl+Z</td>
+          <div class="answer"><strong>Interview Q: What shortcuts speed up your work?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Ctrl+C/V for copy/paste, Ctrl+H for find/replace, F2 for editing, Ctrl+Z for undo. Using shortcuts saves hours.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PHASE 6: MASTERY -->
+    <section class="section" id="phase6">
+      <h2>Phase 6: Mastery — Build & Present</h2>
+
+      <div class="grid">
+        <article class="card chapter span-12">
+          <span class="chip">Chapter 16</span>
+          <h3>Build Full Excel Dashboard</h3>
+          
+          <div class="step"><strong>Dashboard Components:</strong>
+            <ol>
+              <li>KPI Boxes: Total Revenue, Total Orders, Average Order Value</li>
+              <li>Pivot Tables: Sales by city, month, product category</li>
+              <li>Charts: Monthly trend (line), Top products (bar)</li>
+              <li>Slicers: Month, City, Product filters</li>
+              <li>Formatting: Color-coded performance, professional styling</li>
+            </ol>
+          </div>
+
+          <div class="step"><strong>Build Process:</strong>
+            <ol>
+              <li>Sheet 1: Raw data (unchanged)</li>
+              <li>Sheet 2: Pivot tables for aggregation</li>
+              <li>Sheet 3: Dashboard with charts, KPIs, slicers</li>
+              <li>Test: Verify all interactions work</li>
+            </ol>
+          </div>
+
+          <div class="story"><strong>Real Dashboard Story:</strong> Startup CEO needs daily sales dashboard. Data: 500+ orders daily. Without dashboard: 30 min manual work. With Excel dashboard: 10 seconds to see all metrics. Slicers let them filter by date/city instantly. Dashboard becomes the single source of truth.</div>
+
+          <div class="answer"><strong>Interview Q: Walk us through your dashboard project.</strong></div>
+          <div class="answer"><strong>Answer:</strong> "Built sales dashboard with KPIs, pivot summaries, and charts. Used slicers for filtering by month/city. Managers now get insights in 10 seconds instead of 30 minutes."</div>
+        </article>
+
+        <article class="card chapter span-6">
+          <span class="chip">Chapter 17</span>
+          <h3>Storytelling with Data</h3>
+          
+          <div class="step"><strong>Story Structure (4 Parts):</strong>
+            <ol>
+              <li><strong>Headline:</strong> Main insight ("Sales up 25% this quarter")</li>
+              <li><strong>Context:</strong> Why it matters</li>
+              <li><strong>Evidence:</strong> Charts, numbers proving headline</li>
+              <li><strong>Action:</strong> What to do next</li>
+            </ol>
+          </div>
+
+          <div class="step"><strong>Example Narrative:</strong>
+            <pre><code>Headline: "Bangalore is our growth engine"
+Context: Represents 45% of total revenue
+Evidence: Chart shows Bangalore +40% vs others +5%
+Action: Expand team in Bangalore to capitalize</code></pre>
+          </div>
+
+          <div class="answer"><strong>Interview Q: How do you present data to non-technical audience?</strong></div>
+          <div class="answer"><strong>Answer:</strong> Focus on business impact, not technical details. Use headline, visuals, and clear recommendation. Make it easy to understand and act on.</div>
+        </article>
+
+        <article class="card chapter span-6">
+          <span class="chip">Chapter 18</span>
+          <h3>Interview Preparation</h3>
+          
+          <div class="step"><strong>Common Excel Interview Questions</strong></div>
+
+          <div class="practice"><strong>Q: Explain VLOOKUP</strong></div>
+          <div class="answer"><strong>A:</strong> VLOOKUP searches first column and returns value from specified column. Syntax: =VLOOKUP(value, table, column, FALSE)</div>
+
+          <div class="practice"><strong>Q: How do you clean data?</strong></div>
+          <div class="answer"><strong>A:</strong> Remove duplicates, handle blanks, trim spaces, standardize formatting, use TRIM/UPPER/LOWER functions</div>
+
+          <div class="practice"><strong>Q: Pivot Table vs Formula?</strong></div>
+          <div class="answer"><strong>A:</strong> Pivot = instant summary, great for exploration. Formula = repeatable, great for reports. Use both as needed.</div>
+
+          <div class="practice"><strong>Q: Difference between $ absolute and relative references?</strong></div>
+          <div class="answer"><strong>A:</strong> $A$1 = absolute (doesn't change when copied). A1 = relative (changes based on row/column)</div>
+
+          <div class="practice"><strong>Q: How to handle 1M rows in Excel?</strong></div>
+          <div class="answer"><strong>A:</strong> Excel limit is 1M rows. For larger: use Power Query, SQL, or Power BI. Use Power Query for incremental updates.</div>
+
+          <div class="practice"><strong>Q: Biggest mistake you made in Excel?</strong></div>
+          <div class="answer"><strong>A:</strong> "I once calculated wrong column. Now I always verify formulas and test on sample data first."</div>
+        </article>
+      </div>
+    </section>
+
+  </main>
               <td>Undo</td>
             </tr>
             <tr>
