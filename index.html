@@ -32,7 +32,7 @@
   <div class="wrap">
     <section class="hero">
       <h1>Excell Notes</h1>
-      <p class="subtitle">Structured Excel learning plan and chapter content — content comes from the local information file.</p>
+      <p class="subtitle">Structured Excel learning plan and topic content — content comes from the local information file.</p>
       <div class="meta">
         <span>Source: information Reference</span>
         <span>Mode: static pages</span>
@@ -51,8 +51,26 @@
   </div>
 
   <script>
-    const files = [];
-    for (let i=1;i<=18;i++){ files.push({label:`Chapter ${i}`, path:`excell_simple.html#ch${i}`}); }
+    const files = [
+      { label: 'What is Excel & Why It\'s Used', path: 'excell_simple.html#ch1' },
+      { label: 'Excel Interface', path: 'excell_simple.html#ch2' },
+      { label: 'Data Entry & Formatting', path: 'excell_simple.html#ch3' },
+      { label: 'Sorting & Filtering', path: 'excell_simple.html#ch4' },
+      { label: 'Data Cleaning', path: 'excell_simple.html#ch5' },
+      { label: 'Basic Formulas', path: 'excell_simple.html#ch6' },
+      { label: 'Logical Functions', path: 'excell_simple.html#ch7' },
+      { label: 'Lookup Functions', path: 'excell_simple.html#ch8' },
+      { label: 'Text Functions', path: 'excell_simple.html#ch9' },
+      { label: 'Pivot Tables', path: 'excell_simple.html#ch10' },
+      { label: 'Charts in Excel', path: 'excell_simple.html#ch11' },
+      { label: 'Conditional Formatting', path: 'excell_simple.html#ch12' },
+      { label: 'Data Validation', path: 'excell_simple.html#ch13' },
+      { label: 'What-If Analysis', path: 'excell_simple.html#ch14' },
+      { label: 'Excel Shortcuts', path: 'excell_simple.html#ch15' },
+      { label: 'Build Full Excel Dashboard', path: 'excell_simple.html#ch16' },
+      { label: 'Storytelling with Data', path: 'excell_simple.html#ch17' },
+      { label: 'Interview Preparation', path: 'excell_simple.html#ch18' }
+    ];
     const tabs = document.getElementById('tabs');
     const frame = document.getElementById('noteFrame');
     const title = document.getElementById('viewerTitle');

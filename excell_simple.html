@@ -247,6 +247,35 @@
       background: var(--surface-2);
     }
 
+    .visual-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .visual-card {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .visual-card figcaption {
+      padding: 10px 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      background: var(--surface);
+    }
+
     pre {
       background: #16211b;
       color: #eef7f1;
@@ -789,6 +818,23 @@ Look for 1 in first column, return column 2</code></pre>
 
           <div class="answer"><strong>Interview Q: How to choose chart type?</strong></div>
           <div class="answer"><strong>Answer:</strong> Line = trends, Bar = comparisons, Pie = composition. Match chart type to story you want to tell.</div>
+
+          <div class="step"><strong>Visual examples</strong>
+            <div class="visual-gallery">
+              <figure class="visual-card">
+                <img src="https://placehold.co/420x240/0f7a66/ffffff?text=Bar+Chart" alt="Excel bar chart example" />
+                <figcaption>Bar chart: compare categories like city sales.</figcaption>
+              </figure>
+              <figure class="visual-card">
+                <img src="https://placehold.co/420x240/cc6a38/ffffff?text=Line+Chart" alt="Excel line chart example" />
+                <figcaption>Line chart: show monthly trend.</figcaption>
+              </figure>
+              <figure class="visual-card">
+                <img src="https://placehold.co/420x240/1f2d24/ffffff?text=Pie+Chart" alt="Excel pie chart example" />
+                <figcaption>Pie chart: show share of total.</figcaption>
+              </figure>
+            </div>
+          </div>
         </article>
 
         <article class="card chapter span-6">
