@@ -44,7 +44,7 @@
     <section class="viewer">
       <div class="viewer-head">
         <p class="viewer-title" id="viewerTitle"></p>
-        <a class="open-link" id="openLink" href="excell_content.html" target="_blank" rel="noopener noreferrer">Open content</a>
+        <a class="open-link" id="openLink" href="excell_simple.html" target="_blank" rel="noopener noreferrer">Open full page</a>
       </div>
       <iframe id="noteFrame" title="Excell viewer"></iframe>
     </section>
@@ -52,7 +52,7 @@
 
   <script>
     const files = [];
-    for (let i=1;i<=18;i++){ files.push({label:`Chapter ${i}`, path:`excell_content.html#ch${i}`}); }
+    for (let i=1;i<=18;i++){ files.push({label:`Chapter ${i}`, path:`excell_simple.html#ch${i}`}); }
     const tabs = document.getElementById('tabs');
     const frame = document.getElementById('noteFrame');
     const title = document.getElementById('viewerTitle');
