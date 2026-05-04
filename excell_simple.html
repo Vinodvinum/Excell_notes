@@ -1322,6 +1322,118 @@ Action: Expand team in Bangalore to capitalize</code></pre>
           <div class="answer"><strong>3)</strong> Remove extra spaces from A2: <strong>=TRIM(A2)</strong></div>
           <div class="answer"><strong>4)</strong> Lookup product name from code in A2: <strong>=XLOOKUP(A2,CodeCol,NameCol,"Not Found")</strong></div>
         </article>
+
+        <article class="card chapter span-12" id="ch20">
+          <span class="chip">Automation</span>
+          <h3>Excel Macros & Automation</h3>
+
+          <div class="story"><strong>Business Story:</strong> Every Monday, analyst downloads a sales file, formats columns, removes blanks, creates pivot, and emails report. Same 45-minute repetitive work each week. Goal: reduce to 2 minutes.</div>
+
+          <div class="step"><strong>Step 1: What is a Macro?</strong>
+            <p>A macro is a recorded or written set of actions in Excel that runs automatically.</p>
+            <pre><code>Think: "record once, run many times"</code></pre>
+          </div>
+
+          <div class="step"><strong>Step 2: Record Macro Workflow</strong>
+            <ol>
+              <li>View → Macros → Record Macro</li>
+              <li>Do your repeated steps (format, filter, clean)</li>
+              <li>Stop recording</li>
+              <li>Run macro on new file</li>
+            </ol>
+          </div>
+
+          <div class="step"><strong>Step 3: VBA Syntax Basics</strong>
+            <pre><code>Sub CleanSalesData()
+    Columns("A:D").AutoFit
+    Range("A1").CurrentRegion.RemoveDuplicates Columns:=1, Header:=xlYes
+    Range("E:E").NumberFormat = "₹#,##0"
+End Sub</code></pre>
+            <p>Use <strong>Sub ... End Sub</strong> to define a macro. You can assign it to a button.</p>
+          </div>
+
+          <div class="answer"><strong>Interview Q:</strong> How did you automate Excel reporting?</div>
+          <div class="answer"><strong>Answer:</strong> I identified repeated manual steps, recorded and optimized macro using VBA, and mapped it to a button. This reduced report preparation time from 45 minutes to under 3 minutes with consistent output.</div>
+
+          <div class="practice"><strong>Practice:</strong> Create a macro to format date column, remove duplicates, and highlight negative values.</div>
+        </article>
+
+        <article class="card chapter span-12" id="ch21">
+          <span class="chip">Google Sheets</span>
+          <h3>Google Sheets & Apps Script Automation</h3>
+
+          <div class="story"><strong>Business Story:</strong> Team works remotely and needs a shared live tracker. Excel files in email create version confusion. Google Sheets solves collaboration, and Apps Script automates follow-ups.</div>
+
+          <div class="step"><strong>Step 1: When to Use Google Sheets</strong>
+            <ul>
+              <li>Real-time collaboration with team</li>
+              <li>Cloud-based access from anywhere</li>
+              <li>Quick form-to-sheet pipelines</li>
+            </ul>
+          </div>
+
+          <div class="step"><strong>Step 2: Apps Script Basics</strong>
+            <p>Extensions → Apps Script lets you write JavaScript automation for Sheets.</p>
+            <pre><code>function autoFormatSheet() {
+  const sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sales');
+  sh.getRange('A1:F1').setFontWeight('bold').setBackground('#d9ead3');
+  sh.autoResizeColumns(1, 6);
+}</code></pre>
+          </div>
+
+          <div class="step"><strong>Step 3: Trigger-Based Automation</strong>
+            <pre><code>function sendDailySummary() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sales');
+  const total = sheet.getRange('F2:F').getValues().flat().filter(Number).reduce((a,b) => a+b, 0);
+  MailApp.sendEmail('manager@company.com', 'Daily Sales Summary', 'Total Sales: ' + total);
+}</code></pre>
+            <p>Add trigger: run daily at 6 PM automatically.</p>
+          </div>
+
+          <div class="answer"><strong>Interview Q:</strong> How do you automate Google Sheets?</div>
+          <div class="answer"><strong>Answer:</strong> I use Apps Script to format sheets, validate data, generate summaries, and schedule triggers for periodic emails or updates. It removes manual dependency and keeps the workflow live.</div>
+
+          <div class="practice"><strong>Practice:</strong> Build a script that validates empty rows and sends an alert email to owner.</div>
+        </article>
+
+        <article class="card chapter span-12" id="ch22">
+          <span class="chip">Integration</span>
+          <h3>How API Can Be Connected (Excel + Google Sheets)</h3>
+
+          <div class="story"><strong>Business Story:</strong> Sales data lives in CRM API. Team manually exports CSV every day. This causes delays and errors. API integration pulls fresh data automatically into Sheets/Excel dashboards.</div>
+
+          <div class="step"><strong>Step 1: API Connection Flow</strong>
+            <pre><code>API Endpoint → Authentication Token → GET Request → JSON Response → Sheet/Table → Dashboard</code></pre>
+          </div>
+
+          <div class="step"><strong>Step 2: Google Sheets API Pull (Apps Script)</strong>
+            <pre><code>function fetchSalesFromAPI() {
+  const url = 'https://api.example.com/sales';
+  const options = { headers: { Authorization: 'Bearer YOUR_TOKEN' } };
+  const response = UrlFetchApp.fetch(url, options);
+  const data = JSON.parse(response.getContentText());
+
+  const sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('API_Data');
+  sh.clearContents();
+  sh.getRange(1,1,1,3).setValues([['OrderID','City','Amount']]);
+  const rows = data.map(x => [x.order_id, x.city, x.amount]);
+  if (rows.length) sh.getRange(2,1,rows.length,3).setValues(rows);
+}</code></pre>
+          </div>
+
+          <div class="step"><strong>Step 3: Excel API Options</strong>
+            <ul>
+              <li><strong>Power Query Web Connector:</strong> Data → Get Data → From Web (best for analysts)</li>
+              <li><strong>Office Scripts + Power Automate:</strong> Cloud automation for Excel Online</li>
+              <li><strong>VBA + HTTP request:</strong> Legacy desktop automation</li>
+            </ul>
+          </div>
+
+          <div class="answer"><strong>Interview Q:</strong> How do you connect API to reporting sheets?</div>
+          <div class="answer"><strong>Answer:</strong> I authenticate to the API, fetch JSON on schedule, normalize response to tabular format, and refresh visuals. In Google Sheets I use Apps Script triggers; in Excel I prefer Power Query Web connector for stable refresh.</div>
+
+          <div class="practice"><strong>Practice:</strong> Connect a public API, store response in a sheet, and build a small dashboard with auto-refresh trigger.</div>
+        </article>
       </div>
     </section>
 
