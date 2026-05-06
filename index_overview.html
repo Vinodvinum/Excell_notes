@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Data Analyst Training - Index</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #0f7a66;
+      --accent-2: #bf5a2a;
+      --bg: #fafaf9;
+      --surface: #f5f5f4;
+      --line: #e7e5e4;
+      --text: #292524;
+      --muted: #78716b;
+      --code-bg: #1c1917;
+      --code-text: #f5f5f4;
+      --radius: 12px;
+      --wrap: 920px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(var(--wrap), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, var(--accent) 0%, #0a5c51 100%);
+      color: white;
+      padding: 60px 16px;
+      text-align: center;
+    }
+
+    header.hero .wrap {
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .lede {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    main {
+      padding: 40px 16px;
+    }
+
+    .section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.alt {
+      background: var(--surface);
+      padding: 40px 16px;
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: calc((100% - min(var(--wrap), calc(100% - 32px))) / 2);
+      padding-right: calc((100% - min(var(--wrap), calc(100% - 32px))) / 2);
+    }
+
+    .section-head {
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    .span-6 {
+      grid-column: span 6;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .card.soft {
+      border: none;
+      background: var(--surface);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .step {
+      margin-top: 12px;
+      padding: 12px 14px;
+      background: rgba(244, 251, 248, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .story {
+      border-left: 4px solid var(--accent-2);
+      padding: 12px 14px;
+      background: rgba(191, 90, 42, 0.08);
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+    }
+
+    .answer {
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      background: rgba(15, 122, 102, 0.08);
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+    }
+
+    ul, ol {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+
+    .btn:hover {
+      background: #0a5c51;
+    }
+
+    .footer-note {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1024px) {
+      .span-4, .span-6 {
+        grid-column: span 12;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Excel Learning Platform</p>
+      <h1>📊 Excel for Data Analyst</h1>
+      <p class="lede">
+        Professional Excel training from beginner fundamentals to advanced data analyst skills. Learn through real business scenarios, not just features.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Quick Navigation Section -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Get Started</p>
+          <h2>📚 Learning Paths</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card span-6">
+            <h3>🧱 Beginner to Professional</h3>
+            <p>18 chapters covering all Excel skills from basics to advanced analytics.</p>
+            <p><strong>Content:</strong> All foundational concepts, formulas, pivots, dashboards, automation.</p>
+            <p><em>Perfect for:</em> Those starting Excel or transitioning to data analysis roles.</p>
+            <a href="#" class="btn">Open Simple Notes</a>
+          </article>
+
+          <article class="card span-6">
+            <h3>🚀 Advanced Data Analyst Path</h3>
+            <p>Professional analyst training across 10 phases with real business focus.</p>
+            <p><strong>Content:</strong> Advanced formulas, dashboards, automation, business analysis.</p>
+            <p><em>Perfect for:</em> Those targeting Data Analyst, Business Analyst roles.</p>
+            <a href="#" class="btn">Advanced Roadmap</a>
+          </article>
+
+          <article class="card span-12">
+            <div class="answer">
+              <h3>💡 How to Use This Platform</h3>
+              <p><strong>Start here:</strong> Open "Simple Notes - All Chapters" for structured learning with 18 chapters.</p>
+              <p><strong>Get strategic:</strong> Check the "Advanced Roadmap for Data Analyst" to understand professional requirements.</p>
+              <p><strong>Practice:</strong> Each chapter includes real datasets, practice tasks, and interview questions.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18 Chapters Overview -->
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Simple Notes Structure</p>
+          <h2>📖 18 Chapters Organized in 6 Phases</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card soft span-6">
+            <h3>🧱 Phase 1: Foundation</h3>
+            <ul>
+              <li>What is Excel & Why It's Used</li>
+              <li>Excel Interface (VERY IMPORTANT)</li>
+              <li>Data Entry & Formatting</li>
+            </ul>
+          </article>
+
+          <article class="card soft span-6">
+            <h3>🔧 Phase 2: Data Handling</h3>
+            <ul>
+              <li>Sorting & Filtering</li>
+              <li>Data Cleaning</li>
+              <li>Basic Formulas</li>
+            </ul>
+          </article>
+
+          <article class="card soft span-6">
+            <h3>🧠 Phase 3: Functions</h3>
+            <ul>
+              <li>Logical Functions</li>
+              <li>Lookup Functions</li>
+              <li>Text Functions</li>
+            </ul>
+          </article>
+
+          <article class="card soft span-6">
+            <h3>📊 Phase 4: Analysis Tools</h3>
+            <ul>
+              <li>Pivot Tables</li>
+              <li>Charts in Excel</li>
+              <li>Conditional Formatting</li>
+            </ul>
+          </article>
+
+          <article class="card soft span-6">
+            <h3>🔥 Phase 5: Advanced Excel</h3>
+            <ul>
+              <li>Data Validation</li>
+              <li>What-If Analysis</li>
+              <li>Excel Shortcuts</li>
+            </ul>
+          </article>
+
+          <article class="card soft span-6">
+            <h3>🚀 Phase 6: Real Project</h3>
+            <ul>
+              <li>Build Full Excel Dashboard</li>
+              <li>Storytelling with Data</li>
+              <li>Interview Preparation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Method Section -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Teaching Style</p>
+          <h2>🎯 How We Teach</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card span-12">
+            <h3>Each Chapter Includes:</h3>
+            <div class="story">
+              <strong>1. Business Scenario</strong> — Real problem from companies
+            </div>
+            <div class="story">
+              <strong>2. Definition</strong> — What this concept means for analysts
+            </div>
+            <div class="story">
+              <strong>3. Simple Explanation</strong> — Easy-to-understand breakdown
+            </div>
+            <div class="story">
+              <strong>4. Formula/Tool Steps</strong> — How to do it in Excel
+            </div>
+            <div class="story">
+              <strong>5. Analyst Thinking</strong> — Why and when analysts use this
+            </div>
+            <div class="story">
+              <strong>6. Practice Tasks</strong> — Real datasets to work with
+            </div>
+            <div class="story">
+              <strong>7. Interview Q&A</strong> — What companies ask about this
+            </div>
+          </article>
+
+          <article class="card span-12" style="margin-top: 20px;">
+            <h3>Why This Approach?</h3>
+            <div class="answer">
+              <p><strong>Problem:</strong> Most Excel courses teach features in isolation. You memorize formulas but forget them instantly.</p>
+              <p><strong>Our Solution:</strong> We connect every concept to real business problems. You learn <em>why</em> analysts use this tool, not just <em>how</em>.</p>
+              <p><strong>Result:</strong> Knowledge sticks. You can explain concepts to employers. You solve real problems independently.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Start Your Journey</p>
+          <h2>🚀 What To Do Next</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card span-4">
+            <h3>✅ Step 1</h3>
+            <p>Open <strong>"Simple Notes - All Chapters"</strong> tab to see all 18 chapters organized by phase.</p>
+          </article>
+
+          <article class="card span-4">
+            <h3>✅ Step 2</h3>
+            <p>Click on any chapter to learn with real examples, practice tasks, and interview questions.</p>
+          </article>
+
+          <article class="card span-4">
+            <h3>✅ Step 3</h3>
+            <p>Check <strong>"Advanced Roadmap"</strong> for professional analyst training path and 10 phases.</p>
+          </article>
+        </div>
+
+        <div class="grid" style="margin-top: 20px;">
+          <article class="card span-12">
+            <div class="answer">
+              <h3>🎯 Your End Goal</h3>
+              <p>By completing these chapters, you'll be able to:</p>
+              <ul>
+                <li>✅ Work with large datasets efficiently</li>
+                <li>✅ Build professional dashboards</li>
+                <li>✅ Automate repetitive tasks</li>
+                <li>✅ Analyze business trends and explain insights</li>
+                <li>✅ Handle real analyst workflows</li>
+                <li>✅ Ace analyst role interviews</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="footer-note">
+          <p><strong>Remember:</strong> Don't just watch. Practice with the tasks. Build projects. Ask questions. That's how you become a real analyst.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
