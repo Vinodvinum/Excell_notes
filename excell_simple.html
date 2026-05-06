@@ -220,6 +220,35 @@
       background: rgba(197, 157, 44, 0.1);
     }
 
+    .wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      max-width: 880px;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    .card.soft {
+      background: var(--surface-2);
+    }
+
+    .flat-list {
+      margin: 0;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .flat-list li {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
     .data-table {
       width: 100%;
       border-collapse: collapse;
@@ -401,31 +430,62 @@
 
   <main>
     <!-- ROADMAP -->
-    <section class="section" id="roadmap">
-      <h2>18-Chapter Curriculum</h2>
-      <div class="grid">
-        <div class="card span-12">
-          <h3 style="margin-top: 0;">All Chapters Organized by Phase</h3>
-          <ul style="columns: 3; column-gap: 32px;">
-            <li>What is Excel & Why It's Used</li>
-            <li>Excel Interface (VERY IMPORTANT)</li>
-            <li>Data Entry & Formatting</li>
-            <li>Sorting & Filtering</li>
-            <li>Data Cleaning (VERY IMPORTANT)</li>
-            <li>Basic Formulas (Core)</li>
-            <li>Logical Functions</li>
-            <li>Lookup Functions (VERY IMPORTANT)</li>
-            <li>Text Functions</li>
-            <li>Pivot Tables (MOST IMPORTANT)</li>
-            <li>Charts in Excel</li>
-            <li>Conditional Formatting</li>
-            <li>Data Validation</li>
-            <li>What-If Analysis</li>
-            <li>Excel Shortcuts (Speed)</li>
-            <li>Build Full Excel Dashboard</li>
-            <li>Storytelling with Data</li>
-            <li>Interview Preparation</li>
-          </ul>
+    <section class="section alt" id="roadmap">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Master Plan</p>
+          <h2>Excel curriculum: 18 chapters across 6 phases</h2>
+          <p>Learn like a Data Analyst at Amazon: Clean data → Quick analysis → Professional dashboards.</p>
+        </div>
+        <div class="grid">
+          <article class="card soft span-6">
+            <h3>Phase 1: Foundation</h3>
+            <ul class="flat-list">
+              <li>What is Excel & Why It's Used</li>
+              <li>Excel Interface (VERY IMPORTANT)</li>
+              <li>Data Entry & Formatting</li>
+            </ul>
+          </article>
+          <article class="card soft span-6">
+            <h3>Phase 2: Data Handling</h3>
+            <ul class="flat-list">
+              <li>Sorting & Filtering</li>
+              <li>Data Cleaning (VERY IMPORTANT)</li>
+              <li>Basic Formulas (Core)</li>
+            </ul>
+          </article>
+          <article class="card soft span-6">
+            <h3>Phase 3: Functions</h3>
+            <ul class="flat-list">
+              <li>Logical Functions</li>
+              <li>Lookup Functions (VERY IMPORTANT)</li>
+              <li>Text Functions</li>
+            </ul>
+          </article>
+          <article class="card soft span-6">
+            <h3>Phase 4: Analysis Tools</h3>
+            <ul class="flat-list">
+              <li>Pivot Tables (MOST IMPORTANT)</li>
+              <li>Charts in Excel</li>
+              <li>Conditional Formatting</li>
+            </ul>
+          </article>
+          <article class="card soft span-6">
+            <h3>Phase 5: Advanced Excel</h3>
+            <ul class="flat-list">
+              <li>Data Validation</li>
+              <li>What-If Analysis</li>
+              <li>Excel Shortcuts (Speed)</li>
+            </ul>
+          </article>
+          <article class="card soft span-6">
+            <h3>Phase 6: Real Project</h3>
+            <ul class="flat-list">
+              <li>Build Full Excel Dashboard</li>
+              <li>Storytelling with Data</li>
+              <li>Interview Preparation</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
