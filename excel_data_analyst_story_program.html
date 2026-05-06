@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Data Analyst Story Program</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #0f7a66;
+      --accent-2: #c76432;
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --soft: #f4f7f6;
+      --line: #e7e5e4;
+      --text: #292524;
+      --muted: #6b7280;
+      --radius: 12px;
+      --wrap: 980px;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .wrap { width: min(var(--wrap), calc(100% - 28px)); margin: 0 auto; }
+
+    .hero {
+      background: linear-gradient(135deg, #0f7a66 0%, #0b5c4d 100%);
+      color: #fff;
+      padding: 58px 0;
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; margin-bottom: 14px; }
+    .hero p { max-width: 760px; opacity: 0.95; }
+
+    main { padding: 34px 0 48px; }
+    .section { padding: 30px 0; border-bottom: 1px solid var(--line); }
+    h2 { font-size: 1.55rem; margin-bottom: 12px; }
+    h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--accent); }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin-top: 16px; }
+    .span-12 { grid-column: span 12; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .soft { background: var(--soft); }
+
+    .story {
+      border-left: 4px solid var(--accent-2);
+      background: #fff7f3;
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 10px;
+    }
+
+    .step {
+      border-left: 4px solid var(--accent);
+      background: #f3fbf8;
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 10px;
+    }
+
+    ul { padding-left: 18px; margin-top: 8px; }
+    li { margin-bottom: 6px; }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid #c9e8df;
+      background: #eef9f5;
+      color: #0a4f42;
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 0.82rem;
+      margin: 4px 6px 0 0;
+      font-weight: 600;
+    }
+
+    .focus {
+      font-weight: 700;
+      color: #0b5c4d;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; }
+    th { background: #f2faf7; }
+
+    @media (max-width: 900px) {
+      .span-6, .span-4 { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Excel Data Analyst Program</p>
+      <h1>Story-Based Excel Training for Data Analyst Roles</h1>
+      <p>
+        This is a complete structured analyst training program, not random topics. We will learn chapter by chapter using real business situations, simple explanations, analyst logic, practice, and interview readiness.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h2>Target Roles and Final Outcome</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>Target Roles</h3>
+            <ul>
+              <li>Data Analyst</li>
+              <li>Reporting Analyst</li>
+              <li>Business Analyst</li>
+              <li>MIS Analyst</li>
+              <li>Operations Analyst</li>
+              <li>Excel Dashboard Analyst</li>
+            </ul>
+          </article>
+          <article class="card span-6">
+            <h3>Final Outcome</h3>
+            <ul>
+              <li>Analyze large datasets efficiently</li>
+              <li>Build dynamic dashboards</li>
+              <li>Create automated reports</li>
+              <li>Track and explain KPIs</li>
+              <li>Generate management-level insights</li>
+              <li>Handle real-world reporting workflows</li>
+            </ul>
+          </article>
+          <article class="card span-12 soft">
+            <p class="focus">Most important difference:</p>
+            <p>Not <strong>Feature -> Formula -> End</strong>. We learn as <strong>Business Problem -> Analyst Thinking -> Excel Solution -> Business Insight</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>How I Will Teach You (Storytelling Structure)</h2>
+        <div class="grid">
+          <article class="card span-12">
+            <h3>Every chapter follows this flow</h3>
+            <ol style="padding-left: 18px; margin-top: 8px;">
+              <li>Concept Explanation</li>
+              <li>Real Business Scenario</li>
+              <li>Excel Demonstration Logic</li>
+              <li>Formula Breakdown</li>
+              <li>Analyst Thinking</li>
+              <li>Practice Tasks</li>
+              <li>Mini Project</li>
+              <li>Interview Questions</li>
+              <li>Shortcuts and Pro Tips</li>
+              <li>Real-world Mistakes to Avoid</li>
+            </ol>
+          </article>
+          <article class="card span-12">
+            <div class="story">
+              <h3>Example Teaching Style</h3>
+              <p><strong>Business problem:</strong> HR has employee IDs in Sheet A and salaries in Sheet B. How do we merge safely for 20,000 rows?</p>
+              <p>Then we explain why copy-paste fails, why lookup functions are used, which method is faster, and how to make dynamic reporting logic.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>10-Phase Roadmap (Simple Story View)</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>Phase 1: Advanced Formulas</h3>
+            <p>We start with logical functions, lookup matching, and dynamic arrays.</p>
+            <p><span class="pill">IF</span><span class="pill">IFS</span><span class="pill">XLOOKUP</span><span class="pill">INDEX/MATCH</span><span class="pill">FILTER</span><span class="pill">UNIQUE</span></p>
+            <div class="step"><strong>Scenario:</strong> Categorize KPI status and link employee, product, and customer data across multiple tables.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 2: Data Cleaning and Transformation</h3>
+            <p>Learn clean reporting foundations with real messy datasets.</p>
+            <p><span class="pill">TRIM</span><span class="pill">CLEAN</span><span class="pill">SUBSTITUTE</span><span class="pill">TEXTSPLIT</span></p>
+            <div class="step"><strong>Scenario:</strong> Fix inconsistent CRM export before dashboard build.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 3: Pivot Table Analytics</h3>
+            <p>Master multi-level analysis, percentage views, and trend summaries.</p>
+            <div class="step"><strong>Scenario:</strong> Revenue trend analysis by region and department for monthly review meeting.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 4: Dashboard Engineering</h3>
+            <p>Design management dashboards with storytelling and KPI flow.</p>
+            <div class="step"><strong>Scenario:</strong> Build an executive sales dashboard with clear action points.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 5: Power Query (Must Master)</h3>
+            <p>Automate ETL workflows: merge, append, reshape, unpivot.</p>
+            <div class="step"><strong>Scenario:</strong> Monthly MIS automation from multiple input files.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 6: Power Pivot and Data Modeling</h3>
+            <p>Build relationships, star schema basics, and DAX measures.</p>
+            <p><span class="pill">CALCULATE</span><span class="pill">SUMX</span><span class="pill">FILTER</span><span class="pill">TOTALYTD</span></p>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 7: Excel Automation</h3>
+            <p>Use Macros and VBA to reduce manual report work.</p>
+            <div class="step"><strong>Mini project:</strong> One-click MIS reporting and dashboard refresh.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 8: Business Analysis in Excel</h3>
+            <p>Focus on decision making: variance, forecasting, bottlenecks.</p>
+            <div class="step"><strong>Scenario:</strong> Explain sales drop with root cause and recommendation.</div>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 9: Advanced Analyst Projects</h3>
+            <ul>
+              <li>Executive Sales Dashboard</li>
+              <li>Automated MIS Reporting System</li>
+              <li>HR Analytics Dashboard</li>
+              <li>Financial Analysis Dashboard</li>
+            </ul>
+          </article>
+
+          <article class="card span-6">
+            <h3>Phase 10: Interview Preparation</h3>
+            <p>Practice technical questions, case studies, and dashboard explanation.</p>
+            <div class="step"><strong>Focus:</strong> XLOOKUP vs INDEX MATCH, Power Query workflows, KPI logic, storytelling.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Every Topic Includes Real Analyst Work</h2>
+        <div class="grid">
+          <article class="card span-4">
+            <h3>Datasets</h3>
+            <ul>
+              <li>Sales data</li>
+              <li>HR data</li>
+              <li>Finance data</li>
+              <li>Inventory data</li>
+              <li>CRM/customer data</li>
+            </ul>
+          </article>
+          <article class="card span-4">
+            <h3>Tasks</h3>
+            <ul>
+              <li>Monthly MIS</li>
+              <li>Target vs Achievement</li>
+              <li>Attrition analysis</li>
+              <li>Revenue analysis</li>
+              <li>Performance tracking</li>
+            </ul>
+          </article>
+          <article class="card span-4">
+            <h3>What You Will Build</h3>
+            <ul>
+              <li>Executive dashboards</li>
+              <li>Automated MIS systems</li>
+              <li>KPI trackers</li>
+              <li>Forecasting sheets</li>
+              <li>Interactive reports</li>
+              <li>VBA tools</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Difficulty Progression and Priority Skills</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>Progression</h3>
+            <table>
+              <thead><tr><th>Level</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td>Beginner Analyst</td><td>Data handling</td></tr>
+                <tr><td>Intermediate Analyst</td><td>Reporting and pivots</td></tr>
+                <tr><td>Advanced Analyst</td><td>Automation and insights</td></tr>
+                <tr><td>Professional Analyst</td><td>Business storytelling</td></tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="card span-6">
+            <h3>Most Important Skills</h3>
+            <table>
+              <thead><tr><th>Skill</th><th>Priority</th></tr></thead>
+              <tbody>
+                <tr><td>Pivot Tables</td><td>⭐⭐⭐⭐⭐</td></tr>
+                <tr><td>XLOOKUP / INDEX MATCH</td><td>⭐⭐⭐⭐⭐</td></tr>
+                <tr><td>Dashboards</td><td>⭐⭐⭐⭐⭐</td></tr>
+                <tr><td>Power Query</td><td>⭐⭐⭐⭐⭐</td></tr>
+                <tr><td>KPI Analysis</td><td>⭐⭐⭐⭐⭐</td></tr>
+                <tr><td>Dynamic Arrays</td><td>⭐⭐⭐⭐</td></tr>
+                <tr><td>Power Pivot</td><td>⭐⭐⭐⭐</td></tr>
+                <tr><td>VBA Automation</td><td>⭐⭐⭐⭐</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Final Job-Ready Checklist</h2>
+        <div class="card">
+          <ul>
+            <li>Build dashboards from raw data</li>
+            <li>Automate monthly reports</li>
+            <li>Create dynamic KPI systems</li>
+            <li>Analyze business trends and explain insights professionally</li>
+            <li>Handle 50k to 500k row datasets efficiently</li>
+            <li>Present executive-level reports with confidence</li>
+          </ul>
+          <div class="story">
+            <p><strong>Final advice:</strong> Reporting alone is not enough. Companies need insight generation, dashboard storytelling, automation, and business understanding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
