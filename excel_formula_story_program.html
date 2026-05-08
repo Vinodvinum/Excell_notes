@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel Formula Roadmap for Data Analyst</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Segoe UI,Roboto,Arial,sans-serif;background:#fafaf9;color:#282524;line-height:1.65}
+    .wrap{max-width:980px;margin:0 auto;padding:28px}
+    .hero{background:linear-gradient(135deg,#0f7a66,#0b5c4d);color:#fff;border-radius:14px;padding:42px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;font-weight:700;opacity:.9;margin-bottom:10px}
+    h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;margin-bottom:12px}
+    .lead{max-width:780px;opacity:.96}
+    .section{margin-top:24px}
+    .card{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:16px;margin-bottom:12px}
+    .soft{background:#f4f7f6}
+    h2{font-size:1.5rem;margin-bottom:10px}
+    h3{font-size:1.1rem;color:#0f7a66;margin-bottom:8px}
+    h4{font-size:1rem;margin-bottom:6px}
+    ul,ol{padding-left:18px;margin-top:8px}
+    li{margin-bottom:6px}
+    .story{border-left:4px solid #c76432;background:#fff7f3;padding:12px;border-radius:0 8px 8px 0;margin-top:10px}
+    .step{border-left:4px solid #0f7a66;background:#f3fbf8;padding:12px;border-radius:0 8px 8px 0;margin-top:10px}
+    .pill{display:inline-block;background:#eef9f5;border:1px solid #c9e8df;color:#0a4f42;padding:5px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:.82rem;font-weight:700}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border:1px solid #e7e5e4;padding:9px 10px;text-align:left;vertical-align:top}
+    th{background:#f2faf7}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:12px}
+    .span-12{grid-column:span 12}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+    @media (max-width:900px){.span-6,.span-4{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Formula Mentorship Program</div>
+      <h1>Excel Formula Roadmap for Data Analyst</h1>
+      <p class="lead">A structured, story-based formula training path for analysts. We start from business problems and move toward formula mastery, dashboard logic, and interview confidence.</p>
+    </header>
+
+    <section class="section">
+      <div class="card">
+        <h2>How We’ll Learn Excel Formulas</h2>
+        <p>Each formula chapter follows the same analyst mentorship flow so the learning stays practical and easy to remember.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card span-12">
+          <h3>Learning Flow for Every Topic</h3>
+          <ol>
+            <li>Business Problem</li>
+            <li>Formula Concept</li>
+            <li>Visual Excel Example</li>
+            <li>Multiple Real Use Cases</li>
+            <li>Beginner to Advanced Progression</li>
+            <li>Analyst Thinking</li>
+            <li>Practice Tasks</li>
+            <li>Challenge Problems</li>
+            <li>Dashboard Integration</li>
+            <li>Interview Preparation</li>
+          </ol>
+        </article>
+
+        <article class="card span-6">
+          <h3>What Makes This Different</h3>
+          <div class="story">
+            <p><strong>Business problem first:</strong> Data sits in different sheets and the analyst needs a reliable way to combine it.</p>
+            <p><strong>Then formula choice:</strong> We explain why a formula is used, why it is better than manual work, and when it scales well.</p>
+          </div>
+        </article>
+
+        <article class="card span-6">
+          <h3>Datasets We Use</h3>
+          <ul>
+            <li>Sales reports</li>
+            <li>HR employee data</li>
+            <li>Finance reports</li>
+            <li>Inventory systems</li>
+            <li>CRM exports</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card soft">
+        <h2>14-Phase Formula Roadmap</h2>
+        <p>Order matters because analyst workflows build layer by layer.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card span-6"><h3>Phase 1: Core Analytical Formulas</h3><p>SUM, AVERAGE, MIN, MAX, COUNT, COUNTA, COUNTBLANK, ROUND, SUBTOTAL, AGGREGATE.</p><div class="step"><strong>Scenario:</strong> Revenue totals and KPI summaries for reporting.</div></article>
+        <article class="card span-6"><h3>Phase 2: Logical and Decision Functions</h3><p>IF, IFS, AND, OR, NOT, SWITCH, IFERROR, IFNA.</p><div class="step"><strong>Scenario:</strong> KPI logic, pass/fail rules, error handling.</div></article>
+        <article class="card span-6"><h3>Phase 3: Text Analytics Functions</h3><p>LEFT, RIGHT, MID, LEN, TRIM, CLEAN, CONCAT, TEXTJOIN, TEXTSPLIT, TEXTBEFORE, TEXTAFTER.</p><div class="step"><strong>Scenario:</strong> Clean CRM exports and standardize names.</div></article>
+        <article class="card span-6"><h3>Phase 4: Date and Time Analysis</h3><p>TODAY, NOW, DATE, YEAR, MONTH, DAY, WEEKDAY, WEEKNUM, EOMONTH, DATEDIF, NETWORKDAYS.</p><div class="step"><strong>Scenario:</strong> SLA tracking, attendance, monthly reporting.</div></article>
+        <article class="card span-6"><h3>Phase 5: Lookup and Data Matching</h3><p>XLOOKUP, VLOOKUP, HLOOKUP, LOOKUP, INDEX, MATCH, XMATCH, INDEX+MATCH.</p><div class="step"><strong>Scenario:</strong> Join employee, product and revenue datasets.</div></article>
+        <article class="card span-6"><h3>Phase 6: Dynamic Array Functions</h3><p>FILTER, SORT, SORTBY, UNIQUE, SEQUENCE, TAKE, DROP, CHOOSECOLS, VSTACK, HSTACK.</p><div class="step"><strong>Scenario:</strong> Dynamic reports and live analytical sheets.</div></article>
+        <article class="card span-6"><h3>Phase 7: Conditional Analytics</h3><p>SUMIF, SUMIFS, COUNTIF, COUNTIFS, AVERAGEIF, AVERAGEIFS.</p><div class="step"><strong>Scenario:</strong> Region-wise sales and performance segmentation.</div></article>
+        <article class="card span-6"><h3>Phase 8: Error Handling and Data Quality</h3><p>ISERROR, ISBLANK, ISNUMBER, ISTEXT, ISFORMULA, ERROR.TYPE.</p><div class="step"><strong>Scenario:</strong> Error-proof dashboards and validation.</div></article>
+        <article class="card span-6"><h3>Phase 9: Advanced Reference Functions</h3><p>OFFSET, INDIRECT, ADDRESS, ROW, COLUMN, ROWS, COLUMNS, CELL, HYPERLINK.</p><div class="step"><strong>Scenario:</strong> Dynamic ranges and dashboard navigation.</div></article>
+        <article class="card span-6"><h3>Phase 10: Financial Functions</h3><p>PMT, NPV, IRR, FV, PV, RATE.</p><div class="step"><strong>Scenario:</strong> Loans, investments and financial planning.</div></article>
+        <article class="card span-6"><h3>Phase 11: Statistical Functions</h3><p>MEDIAN, MODE, STDEV.P, STDEV.S, VAR.P, VAR.S, PERCENTILE, RANK, LARGE, SMALL, CORREL.</p><div class="step"><strong>Scenario:</strong> Trend, ranking and correlation analysis.</div></article>
+        <article class="card span-6"><h3>Phase 12: Advanced Analytical Formulas</h3><p>Nested formulas, multi-condition formulas, array formulas and optimization.</p></article>
+        <article class="card span-6"><h3>Phase 13: Dashboard Formula Engineering</h3><p>Dynamic KPI cards, titles, filters and auto-updating reports.</p></article>
+        <article class="card span-6"><h3>Phase 14: Formula Optimization</h3><p>Reduce calculation load, avoid volatile formulas, use structured references and named ranges.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>How We’ll Teach Each Formula Chapter</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>1. Business Problem First</h3>
+            <p>We begin with a company scenario, not syntax.</p>
+            <div class="story"><strong>Example:</strong> Sales data is in one sheet and targets are in another. How do analysts combine them automatically?</div>
+          </article>
+          <article class="card span-6">
+            <h3>2. Formula Concept</h3>
+            <p>Then we explain what the formula does, why companies use it, and where analysts apply it.</p>
+          </article>
+          <article class="card span-6">
+            <h3>3. Visual Excel Example</h3>
+            <p>Every formula is shown with small tables, expected output, and a step-by-step breakdown.</p>
+          </article>
+          <article class="card span-6">
+            <h3>4. Analyst Thinking</h3>
+            <p>We compare formula choices, scalability, speed, and dashboard integration.</p>
+          </article>
+          <article class="card span-6">
+            <h3>5. Practice and Challenges</h3>
+            <p>Real analyst exercises, company-style tasks, mini assignments, and interview-style cases.</p>
+          </article>
+          <article class="card span-6">
+            <h3>6. Dashboard Integration</h3>
+            <p>You learn how formulas feed KPI cards, titles, filters, charts, and automated reports.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card soft">
+        <h2>Example Learning Path</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <h3>Phase 1: Aggregation Functions</h3>
+            <p>SUM, AVERAGE, COUNT, SUBTOTAL and AGGREGATE for summaries and KPI totals.</p>
+            <div class="step"><strong>Use case:</strong> Sales analysis and department performance summaries.</div>
+          </article>
+          <article class="card span-6">
+            <h3>Phase 2: Logical Functions</h3>
+            <p>IF, IFS, AND, OR, IFERROR for business rules and KPI status logic.</p>
+            <div class="step"><strong>Use case:</strong> Pass/fail logic and error-proof reports.</div>
+          </article>
+          <article class="card span-6">
+            <h3>Phase 3: Lookup Functions</h3>
+            <p>XLOOKUP, INDEX MATCH and multi-condition lookups for data matching.</p>
+            <div class="step"><strong>Use case:</strong> Joining employee, product and revenue datasets.</div>
+          </article>
+          <article class="card span-6">
+            <h3>Phase 4: Dynamic Reporting</h3>
+            <p>FILTER, UNIQUE, SORT and VSTACK/HSTACK for live analytical reports.</p>
+            <div class="step"><strong>Use case:</strong> Interactive dashboards and automated reporting systems.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>What You’ll Build While Learning</h2>
+        <ul>
+          <li>KPI trackers</li>
+          <li>Dynamic reports</li>
+          <li>Revenue analyzers</li>
+          <li>Employee dashboards</li>
+          <li>Sales performance systems</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Learning Priority</h2>
+        <table>
+          <thead><tr><th>Formula Group</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>XLOOKUP / INDEX MATCH</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>SUMIFS / COUNTIFS</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>IF / IFS</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>FILTER / UNIQUE</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>Text Cleaning Functions</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>Date Functions</td><td>⭐⭐⭐⭐⭐</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Final Target</h2>
+        <ul>
+          <li>Build dynamic analytical reports</li>
+          <li>Clean large datasets</li>
+          <li>Create executive dashboards</li>
+          <li>Automate reporting logic</li>
+          <li>Solve analyst interview problems confidently</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card soft">
+        <h2>After Formula Mastery</h2>
+        <p>Once the formula roadmap is complete, the next learning steps are pivot tables, dashboard engineering, Power Query, Power Pivot, VBA automation, executive reporting, portfolio projects, and interview preparation.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
